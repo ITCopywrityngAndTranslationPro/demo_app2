@@ -1,0 +1,52 @@
+<%= form_with(model: whiskey, local: true) do |form| %>
+  <% if whiskey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(whiskey.errors.count, "error") %> prohibited this whiskey from being saved:</h2>
+
+      <ul>
+      <% whiskey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :whiskey_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost %>
+    <%= form.number_field :cost, id: :whiskey_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :whiskey_type %>
+    <%= form.text_field :whiskey_type, id: :whiskey_whiskey_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :extracts %>
+    <%= form.number_field :extracts, id: :whiskey_extracts %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country, id: :whiskey_country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :softness %>
+    <%= form.number_field :softness, id: :whiskey_softness %>
+  </div>
+
+  <div class="field">
+    <%= form.label :smoked %>
+    <%= form.number_field :smoked, id: :whiskey_smoked %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

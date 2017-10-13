@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Whiskeys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cost</th>
+      <th>Whiskey type</th>
+      <th>Extracts</th>
+      <th>Country</th>
+      <th>Softness</th>
+      <th>Smoked</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @whiskeys.each do |whiskey| %>
+      <tr>
+        <td><%= whiskey.name %></td>
+        <td><%= whiskey.cost %></td>
+        <td><%= whiskey.whiskey_type %></td>
+        <td><%= whiskey.extracts %></td>
+        <td><%= whiskey.country %></td>
+        <td><%= whiskey.softness %></td>
+        <td><%= whiskey.smoked %></td>
+        <td><%= link_to 'Show', whiskey %></td>
+        <td><%= link_to 'Edit', edit_whiskey_path(whiskey) %></td>
+        <td><%= link_to 'Destroy', whiskey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Whiskey', new_whiskey_path %>
